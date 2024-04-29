@@ -47,4 +47,10 @@ re:
 compile_commands.json:
 	bear -- make
 
+binary_tests_run:
+	echo "No binary tests"
+
+tests_run:
+	echo "No unit tests"
+
 .PHONY: all $(LIBGROUPS) grind sanitize unit_tests everything clean fclean re
