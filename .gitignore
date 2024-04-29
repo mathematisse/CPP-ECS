@@ -1,0 +1,13 @@
+*build/
+
+*.a
+*.o
+*.so
+
+*.gcda
+*.gcno
+*.gcov
+
+compile_commands.json
+
+.cache/
