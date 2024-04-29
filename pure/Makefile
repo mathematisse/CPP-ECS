@@ -12,7 +12,7 @@ all:					$(LIBS)
 $(LIBS):
 	$(MAKE) -C $@
 
-grind:				
+grind:
 	$(foreach lib, $(LIBS), $(MAKE) -C $(lib) grind;)
 
 sanitize:
