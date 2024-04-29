@@ -7,9 +7,12 @@
 
 # Variables
 
-SRC						=	Chunks/AChunk.cpp	\
-							Components/AComponentPool.cpp	\
+SRC						=	Chunks/ChunkPos.cpp	\
+							Components/CoreComponentPools.cpp	\
 							Entities/AEntity.cpp	\
+							Entities/AEntityPool.cpp	\
+							Entities/CoreEntities.cpp	\
+							Entities/CoreEntityPools.cpp	\
 							Systems/ASystem.cpp	\
 
 SRC_DIR					=	./src/
