@@ -38,15 +38,14 @@ jobs:
   compile_and_run_tests:
     needs: check_coding_style
     runs-on: ubuntu-latest
-    container: epitechcontent/epitest-docker
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
     
       - name: Install dependencies
         run: |
-          apt-get update
-          apt-get install -y rsync
+          sudo apt-get update
+          sudo apt-get install -y rsync
 
       - name: Compile program
         run: make
