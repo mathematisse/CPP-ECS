@@ -52,10 +52,13 @@ jobs:
 
       - name: Check libs
         run: |
-          IFS=',' read -ra exec_paths <<< "${LIBS}"
-          for exec_path in "${exec_paths[@]}"; do
-            [ -x "$exec_path" ] || exit 1
-          done
+            IFS=',' read -ra LIBS <<< "$LIBS"
+            for lib in "${LIBS[@]}"; do
+              if [ ! -f "$lib" ]; then
+                echo "Missing library: $lib"
+                exit 1
+              fi
+            done
 
       - name: Run program_tester
         run: |
