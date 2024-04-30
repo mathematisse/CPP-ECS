@@ -84,8 +84,8 @@ namespace ECS
             void addChunk(size_t elemCount) override
             {
                 this->_x->addChunk(elemCount);
-                this->_y.addChunk(elemCount);
-                this->_z.addChunk(elemCount);
+                this->_y->addChunk(elemCount);
+                this->_z->addChunk(elemCount);
             }
 
         protected:
@@ -109,9 +109,9 @@ namespace ECS
             void addChunk(size_t elemCount) override
             {
                 this->_x->addChunk(elemCount);
-                this->_y.addChunk(elemCount);
-                this->_z.addChunk(elemCount);
-                this->_w.addChunk(elemCount);
+                this->_y->addChunk(elemCount);
+                this->_z->addChunk(elemCount);
+                this->_w->addChunk(elemCount);
             }
 
         protected:
