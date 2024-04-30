@@ -5,4 +5,4 @@
 ** Ecs pure simd SimdChunk
 */
 
-#pragma once
+#include "Chunks/SimdChunks.hpp"

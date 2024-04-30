@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** CPP-ECS
 ** File description:
-** Ecs pure base ChunkPool
+** Ecs pure base StandardChunkPool
 */
 
 #pragma once
@@ -20,11 +20,11 @@ namespace ECS
         class StandardChunkPool : public AChunkPool<T>
         {
         public:
-            StandardChunkPool() 
+            StandardChunkPool() : AChunkPool<T>()
             {
             }
             ~StandardChunkPool() = default;
-            void AddChunk(size_t elemCount)
+            void AddChunk(size_t elemCount) override
             {
                 this->_chunks.push_back(new StandardChunk<T>(elemCount));
             }

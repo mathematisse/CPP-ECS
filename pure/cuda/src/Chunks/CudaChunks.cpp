@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** CPP-ECS
 ** File description:
-** Ecs pure simd SimdChunk
+** Ecs pure cuda CudaChunk
 */
 
-#include "Chunks/SimdChunk.hpp"
+#include "Chunks/CudaChunks.hpp"

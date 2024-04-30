@@ -7,14 +7,14 @@
 
 # Variables
 
-SRC						=	Chunks/CudaChunk.cpp	\
+SRC						=	Chunks/CudaChunks.cpp	\
 							Systems/CudaSystem.cpp	\
 
 SRC_DIR					=	./src/
 
 NAME					=	libecs-pure-cuda.a
 
-CXXFLAGS				=	-Wall -Wextra -I./include
+CXXFLAGS				=	-Wall -Wextra -I./include -I../base/include
 
 VALARGS					=	-g3
 

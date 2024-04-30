@@ -22,10 +22,10 @@ namespace ECS
             AVXCHUNKI = 16,
             AVXCHUNK = 32,
             AVXCHUNKD = 64,
-            GPUCHUNK = 128,
-            GPULINKCHUNK = 256,
+            CUDACHUNK = 128,
+            CUDALINKCHUNK = 256,
             SIMDCHUNK = SSECHUNKI | SSECHUNK | SSECHUNKD | AVXCHUNKI | AVXCHUNK | AVXCHUNKD,
-            ANYGPUCHUNK = GPUCHUNK | GPULINKCHUNK
+            ANYCUDACHUNK = CUDACHUNK | CUDALINKCHUNK
         };
 
         template <typename T>
