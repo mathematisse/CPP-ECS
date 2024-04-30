@@ -24,7 +24,7 @@ namespace ECS
             {
             }
             ~CudaChunkPool() = default;
-            void AddChunk(size_t elemCount) override
+            void addChunk(size_t elemCount) override
             {
                 this->_chunks.push_back(new CudaChunk<T>(elemCount));
             }
@@ -38,7 +38,7 @@ namespace ECS
             {
             }
             ~CudaLinkChunkPool() = default;
-            void AddChunk(size_t elemCount) override
+            void addChunk(size_t elemCount) override
             {
                 this->_chunks.push_back(new CudaLinkChunk<T>(elemCount));
             }

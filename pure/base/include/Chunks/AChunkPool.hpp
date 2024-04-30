@@ -54,6 +54,10 @@ namespace ECS
                 }
                 return size;
             }
+            uint64_t chunkCount() const override
+            {
+                return _chunks.size();
+            }
 
         protected:
             std::vector<IChunk<T> *> _chunks;

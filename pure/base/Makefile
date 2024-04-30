@@ -14,6 +14,8 @@ SRC						=	Chunks/ChunkPos.cpp	\
 							Entities/CoreEntities.cpp	\
 							Entities/CoreEntityPools.cpp	\
 							Systems/ASystem.cpp	\
+							Systems/SystemTree.cpp	\
+							EntityManager.cpp	\
 
 SRC_DIR					=	./src/
 

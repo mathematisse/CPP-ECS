@@ -24,7 +24,7 @@ namespace ECS
             {
             }
             ~StandardChunkPool() = default;
-            void AddChunk(size_t elemCount) override
+            void addChunk(size_t elemCount) override
             {
                 this->_chunks.push_back(new StandardChunk<T>(elemCount));
             }

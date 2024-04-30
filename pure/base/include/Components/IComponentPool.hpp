@@ -24,6 +24,8 @@ namespace ECS
             virtual IComponent *operator[](Chunks::ChunkPos cPos) = 0;
             virtual const IComponent *operator[](Chunks::ChunkPos cPos) const = 0;
             virtual size_t elemCount() const = 0;
+            virtual size_t chunkCount() const = 0;
+            virtual void addChunk(size_t elemCount) = 0;
         };
     }
 }

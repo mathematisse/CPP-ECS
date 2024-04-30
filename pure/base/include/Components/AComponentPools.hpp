@@ -7,9 +7,10 @@
 
 #pragma once
 
-#include "Chunks/StandardChunkPool.hpp"
+#include "Chunks/IChunkPool.hpp"
 #include "Components/IComponentPool.hpp"
 #include "Components/Components.hpp"
+#include <cstddef>
 
 namespace ECS
 {
@@ -23,17 +24,22 @@ namespace ECS
             ~AComponentPool() = default;
             IComponent *operator[](Chunks::ChunkPos cPos) override
             {
-                return new Components::Component<T>(this->_x[cPos]);
+                return new Components::Component<T>((*this->_x)[cPos]);
             }
             const IComponent *operator[](Chunks::ChunkPos cPos) const override
             {
-                return new Components::Component<T>(*this->_x[cPos]);
+                return new Components::Component<T>((*this->_x)[cPos]);
             }
-            uint64_t elemCount() const override { return this->_x.elemCount(); }
+            uint64_t elemCount() const override { return this->_x->elemCount(); }
+            uint64_t chunkCount() const override { return this->_x->chunkCount(); }
             const std::string &getComponentName() const override { return this->_componentName; }
+            void addChunk(size_t elemCount) override
+            {
+                this->_x->addChunk(elemCount);
+            }
 
         protected:
-            Chunks::StandardChunkPool<T> _x;
+            Chunks::IChunkPool<T> *_x;
             const std::string _componentName;
         };
 
@@ -45,15 +51,20 @@ namespace ECS
             ~AComponentPool2() = default;
             IComponent *operator[](Chunks::ChunkPos cPos) override
             {
-                return new Components::Component2<T>(this->_x[cPos], this->_y[cPos]);
+                return new Components::Component2<T>((*this->_x)[cPos], (*this->_y)[cPos]);
             }
             const IComponent *operator[](Chunks::ChunkPos cPos) const override
             {
-                return new Components::Component2<T>(*this->_x[cPos], *this->_y[cPos]);
+                return new Components::Component2<T>((*this->_x)[cPos], (*this->_y)[cPos]);
+            }
+            void addChunk(size_t elemCount) override
+            {
+                this->_x->addChunk(elemCount);
+                this->_y->addChunk(elemCount);
             }
 
         protected:
-            Chunks::StandardChunkPool<T> _y;
+            Chunks::IChunkPool<T> *_y;
         };
 
         template <typename T>
@@ -64,15 +75,21 @@ namespace ECS
             ~AComponentPool3() = default;
             IComponent *operator[](Chunks::ChunkPos cPos) override
             {
-                return new Components::Component3<T>(this->_x[cPos], this->_y[cPos], this->_z[cPos]);
+                return new Components::Component3<T>((*this->_x)[cPos], (*this->_y)[cPos], (*this->_z)[cPos]);
             }
             const IComponent *operator[](Chunks::ChunkPos cPos) const override
             {
-                return new Components::Component3<T>(*this->_x[cPos], *this->_y[cPos], *this->_z[cPos]);
+                return new Components::Component3<T>((*this->_x)[cPos], (*this->_y)[cPos], (*this->_z)[cPos]);
+            }
+            void addChunk(size_t elemCount) override
+            {
+                this->_x->addChunk(elemCount);
+                this->_y.addChunk(elemCount);
+                this->_z.addChunk(elemCount);
             }
 
         protected:
-            Chunks::StandardChunkPool<T> _z;
+            Chunks::IChunkPool<T> *_z;
         };
 
         template <typename T>
@@ -83,15 +100,22 @@ namespace ECS
             ~AComponentPool4() = default;
             IComponent *operator[](Chunks::ChunkPos cPos) override
             {
-                return new Components::Component4<T>(this->_x[cPos], this->_y[cPos], this->_z[cPos], _w[cPos]);
+                return new Components::Component4<T>((*this->_x)[cPos], (*this->_y)[cPos], (*this->_z)[cPos], (*this->_w)[cPos]);
             }
             const IComponent *operator[](Chunks::ChunkPos cPos) const override
             {
-                return new Components::Component4<T>(*this->_x[cPos], *this->_y[cPos], *this->_z[cPos], *_w[cPos]);
+                return new Components::Component4<T>((*this->_x)[cPos], (*this->_y)[cPos], (*this->_z)[cPos], (*this->_w)[cPos]);
+            }
+            void addChunk(size_t elemCount) override
+            {
+                this->_x->addChunk(elemCount);
+                this->_y.addChunk(elemCount);
+                this->_z.addChunk(elemCount);
+                this->_w.addChunk(elemCount);
             }
 
         protected:
-            Chunks::StandardChunkPool<T> _w;
+            Chunks::IChunkPool<T> *_w;
         };
     }
 }

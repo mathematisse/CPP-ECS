@@ -16,9 +16,9 @@ namespace ECS
         class EntityPtr : public AEntity
         {
         public:
-            EntityPtr(Components::Component<uint8_t> *poolId, Components::Component2<uint64_t> *cPos);
+            EntityPtr(Components::Component<uint8_t> *status, Components::Component2<uint64_t> *cPos, Components::Component<uint8_t> *poolId);
             ~EntityPtr();
-            uint8_t GetPoolId() const;
+            uint8_t getPoolId() const;
         protected:
             const Components::Component<uint8_t> *_poolId;
         };

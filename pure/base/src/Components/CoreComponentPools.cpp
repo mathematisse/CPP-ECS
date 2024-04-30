@@ -12,12 +12,12 @@ namespace ECS
     namespace Components
     {
         EntityPoolIdPool::EntityPoolIdPool()
-            : AComponentPool<int8_t>("entity_pool_id")
+            : AComponentPool<uint8_t>("entity_pool_id")
         {
         }
 
         ChunkPosPool::ChunkPosPool()
-            : AComponentPool2<int64_t>("chunk_pos")
+            : AComponentPool2<uint64_t>("chunk_pos")
         {
         }
 

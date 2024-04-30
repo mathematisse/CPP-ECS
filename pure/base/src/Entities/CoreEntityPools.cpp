@@ -14,7 +14,7 @@ namespace ECS
     {
 
         EntityPtrPool::EntityPtrPool()
-            : AEntityPool(), _entityPoolIdPool()
+            : AEntityPool("entityPtr", 256), _entityPoolIdPool()
         {
         }
 
@@ -25,8 +25,9 @@ namespace ECS
         IEntity *EntityPtrPool::operator[](Chunks::ChunkPos cPos)
         {
             return new EntityPtr(
-                (Components::Component<uint8_t> *)_entityPoolIdPool[cPos],
-                (Components::Component2<uint64_t> *)_chunkPosPool[cPos]);
+                (Components::Component<uint8_t> *)_entityStatusPool[cPos],
+                (Components::Component2<uint64_t> *)_chunkPosPool[cPos],
+                (Components::Component<uint8_t> *)_entityPoolIdPool[cPos]);
         }
 
         std::vector<Components::IComponentPool *> EntityPtrPool::getComponentPools()

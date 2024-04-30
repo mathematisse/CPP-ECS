@@ -9,6 +9,7 @@
 
 #include "Chunks/IChunk.hpp"
 #include "Chunks/ChunkPos.hpp"
+#include <cstdint>
 
 namespace ECS
 {
@@ -23,8 +24,9 @@ namespace ECS
             virtual T *operator[](ChunkPos pos) = 0;
             virtual const IChunk<T> *operator[](size_t index) const = 0;
             virtual const T *operator[](ChunkPos pos) const = 0;
-            virtual void AddChunk(size_t elemCount) = 0;
+            virtual void addChunk(size_t elemCount) = 0;
             virtual uint64_t elemCount() const = 0;
+            virtual uint64_t chunkCount() const = 0;
         };
     }
 }

@@ -18,10 +18,14 @@ namespace ECS
         class AEntity : public IEntity
         {
         public:
-            AEntity(Components::Component2<uint64_t> *cPos);
+            AEntity(Components::Component<uint8_t> *status, Components::Component2<uint64_t> *cPos);
             ~AEntity();
-            Chunks::ChunkPos GetCPos() const override;
+            uint8_t getStatus() const override;
+            Chunks::ChunkPos getChunkPos() const override;
+            void setStatus(uint8_t status) override;
+            void setChunkPos(Chunks::ChunkPos cPos) override;
         protected:
+            Components::Component<uint8_t> *_status;
             Components::Component2<uint64_t> *_cPos;
         };
     }

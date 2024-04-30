@@ -17,7 +17,10 @@ namespace ECS
         {
         public:
             virtual ~IEntity() = default;
-            virtual Chunks::ChunkPos GetCPos() const = 0;
+            virtual uint8_t getStatus() const = 0;
+            virtual Chunks::ChunkPos getChunkPos() const = 0;
+            virtual void setStatus(uint8_t status) = 0;
+            virtual void setChunkPos(Chunks::ChunkPos cPos) = 0;
         };
     }
 }

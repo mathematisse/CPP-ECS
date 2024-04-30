@@ -11,17 +11,16 @@ namespace ECS
 {
     namespace Entities
     {
-        EntityPtr::EntityPtr(Components::Component<uint8_t> *poolId, Components::Component2<uint64_t> *cPos)
-            : AEntity(cPos), _poolId(poolId)
+        EntityPtr::EntityPtr(Components::Component<uint8_t> *status, Components::Component2<uint64_t> *cPos, Components::Component<uint8_t> *poolId)
+            : AEntity(status, cPos), _poolId(poolId)
         {
         }
 
         EntityPtr::~EntityPtr()
         {
-            delete _poolId;
         }
 
-        uint8_t EntityPtr::GetPoolId() const
+        uint8_t EntityPtr::getPoolId() const
         {
             return *_poolId->GetX();
         }

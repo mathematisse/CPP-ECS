@@ -24,7 +24,7 @@ namespace ECS
             {
             }
             ~SimdChunkPool() = default;
-            void AddChunk(size_t elemCount)
+            void addChunk(size_t elemCount)
             {
                 this->_chunks.push_back(new SimdChunk<T1, T2>(elemCount));
             }
