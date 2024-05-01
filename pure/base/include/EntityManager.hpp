@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include "Entities/CoreEntityPools.hpp"
-#include "Entities/CoreEntities.hpp"
+#include "Entities/PureEntityPools.hpp"
+#include "Entities/PureEntities.hpp"
 #include "Entities/IEntity.hpp"
 #include "Entities/IEntityPool.hpp"
 #include "Systems/SystemTree.hpp"

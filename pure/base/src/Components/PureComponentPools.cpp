@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2024
 ** CPP-ECS
 ** File description:
-** Ecs pure base CoreComponentPools
+** Ecs pure base PureComponentPools
 */
 
-#include "Components/CoreComponentPools.hpp"
+#include "Components/PureComponentPools.hpp"
 
 namespace ECS
 {

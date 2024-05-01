@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2024
 ** CPP-ECS
 ** File description:
-** Ecs pure base CoreEntities
+** Ecs pure base PureEntities
 */
 
-#include "Entities/CoreEntities.hpp"
+#include "Entities/PureEntities.hpp"
 
 namespace ECS
 {

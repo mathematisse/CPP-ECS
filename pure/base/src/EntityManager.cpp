@@ -7,7 +7,7 @@
 
 #include "EntityManager.hpp"
 #include "Chunks/ChunkPos.hpp"
-#include "Components/CoreComponentPools.hpp"
+#include "Components/PureComponentPools.hpp"
 #include "Entities/IEntity.hpp"
 #include <list>
 

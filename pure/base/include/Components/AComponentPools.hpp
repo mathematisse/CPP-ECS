@@ -17,7 +17,7 @@ namespace ECS
     namespace Components
     {
         template <typename T>
-        class AComponentPool : public IComponentPool
+        class AComponentPool : virtual public IComponentPool
         {
         public:
             AComponentPool(const std::string &componentName) : _x(), _componentName(componentName) {}

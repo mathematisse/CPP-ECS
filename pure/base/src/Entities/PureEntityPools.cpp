@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2024
 ** CPP-ECS
 ** File description:
-** Ecs pure base CoreEntityPools
+** Ecs pure base PureEntityPools
 */
 
-#include "Entities/CoreEntityPools.hpp"
-#include "Entities/CoreEntities.hpp"
+#include "Entities/PureEntityPools.hpp"
+#include "Entities/PureEntities.hpp"
 
 namespace ECS
 {

@@ -7,14 +7,15 @@
 
 # Variables
 
-SRC						=	Components/CoreComponentPools.cpp	\
-							Entities/CoreEntityPools.cpp		\
+SRC						=	Components/PlaneComponentPools.cpp	\
+							Entities/PlaneEntityPools.cpp		\
 
 SRC_DIR					=	./src/
 
 NAME					=	libecs-world-plane.a
 
-CXXFLAGS				=	-Wall -Wextra -I./include
+CXXFLAGS				=	-Wall -Wextra -I./include	\
+							-I../base/include -I../../pure/base/include
 
 VALARGS					=	-g3
 

@@ -8,7 +8,7 @@
 #pragma once
 
 #include "Entities/IEntityPool.hpp"
-#include "Components/CoreComponentPools.hpp"
+#include "Components/PureComponentPools.hpp"
 #include <cstdint>
 
 namespace ECS

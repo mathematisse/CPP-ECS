@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "Components/CoreComponentPools.hpp"
+#include "Components/PureComponentPools.hpp"
 #include "Entities/AEntityPool.hpp"
 
 namespace ECS

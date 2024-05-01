@@ -8,11 +8,11 @@
 # Variables
 
 SRC						=	Chunks/ChunkPos.cpp	\
-							Components/CoreComponentPools.cpp	\
+							Components/PureComponentPools.cpp	\
 							Entities/AEntity.cpp	\
 							Entities/AEntityPool.cpp	\
-							Entities/CoreEntities.cpp	\
-							Entities/CoreEntityPools.cpp	\
+							Entities/PureEntities.cpp	\
+							Entities/PureEntityPools.cpp	\
 							Systems/ASystem.cpp	\
 							Systems/SystemTree.cpp	\
 							EntityManager.cpp	\
