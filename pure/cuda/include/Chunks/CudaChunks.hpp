@@ -8,7 +8,9 @@
 #pragma once
 
 #include "Chunks/AChunk.hpp"
-#include <cuda_runtime.h>
+#ifdef NVCC_EXISTS
+    #include <cuda_runtime.h>
+#endif
 
 namespace ECS
 {
@@ -21,12 +23,14 @@ namespace ECS
             CudaChunk(size_t elemCount)
                 : AChunk<T>(CUDACHUNK, elemCount)
             {
-                cudaMalloc(&_CudaData, elemCount * sizeof(T));
+                #ifdef NVCC_EXISTS
+                    cudaMalloc(&_cudaData, elemCount * sizeof(T));
+                #endif
                 this->_data = nullptr;
             }
             ~CudaChunk()
             {
-                cudaFree(_CudaData);
+                cudaFree(_cudaData);
             }
             T *operator[](size_t index) override
             {
@@ -37,9 +41,9 @@ namespace ECS
                 return nullptr;
             }
             T *GetData() override { return nullptr; }
-            T *GetCudaData() { return _CudaData; }
+            T *GetCudaData() { return _cudaData; }
         private:
-            T *_CudaData;
+            T *_cudaData;
         };
 
         template <typename T>
@@ -49,11 +53,15 @@ namespace ECS
             CudaLinkChunk(size_t elemCount)
                 : AChunk<T>(CUDALINKCHUNK, elemCount)
             {
-                cudaMallocHost(&this->_data, elemCount * sizeof(T));
+                #ifdef NVCC_EXISTS
+                    cudaMallocHost(&this->_data, elemCount * sizeof(T));
+                #endif
             }
             ~CudaLinkChunk()
             {
-                cudaFreeHost(this->_data);
+                #ifdef NVCC_EXISTS
+                    cudaFreeHost(this->_data);
+                #endif
             }
         };
 

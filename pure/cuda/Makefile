@@ -42,6 +42,8 @@ ASANOBJ					=	$(addprefix $(ASAN_DIR), $(SRC:.cpp=.o))
 
 TESTOBJ					=	$(addprefix $(TEST_DIR), $(SRC:.cpp=.o))
 
+NVCC_EXISTS				=	$(shell command -v nvcc 2> /dev/null)
+
 # Targets
 
 $(NAME):				$(OBJ) | $(PROD_DIR)
