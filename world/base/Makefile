@@ -7,14 +7,14 @@
 
 # Variables
 
-SRC						=	Components/CoreComponentPools.cpp	\
-							Entities/CoreEntityPools.cpp		\
+SRC						=	Components/WorldComponentPools.cpp	\
+							Entities/WorldEntityPools.cpp		\
 
 SRC_DIR					=	./src/
 
 NAME					=	libecs-world-base.a
 
-CXXFLAGS				=	-Wall -Wextra -I./include
+CXXFLAGS				=	-Wall -Wextra -I./include -I../../pure/base/include
 
 VALARGS					=	-g3
 

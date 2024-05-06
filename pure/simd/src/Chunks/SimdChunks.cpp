@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2024
 ** CPP-ECS
 ** File description:
-** Ecs pure base EntityPoolIdPool
+** Ecs pure simd SimdChunk
 */
 
-#pragma once
+#include "Chunks/SimdChunks.hpp"

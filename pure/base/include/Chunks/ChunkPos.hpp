@@ -6,3 +6,24 @@
 */
 
 #pragma once
+
+#include <cstdint>
+
+namespace ECS
+{
+    namespace Chunks
+    {
+        struct ChunkPos {
+            uint64_t chunkIndex;
+            uint64_t elemIndex;
+
+            // redefine comparison operators
+            bool operator==(const ChunkPos &rhs) const;
+            bool operator!=(const ChunkPos &rhs) const;
+            bool operator<(const ChunkPos &rhs) const;
+            bool operator>(const ChunkPos &rhs) const;
+            bool operator<=(const ChunkPos &rhs) const;
+            bool operator>=(const ChunkPos &rhs) const;
+        };
+    }
+}

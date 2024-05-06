@@ -6,3 +6,16 @@
 */
 
 #pragma once
+
+namespace ECS
+{
+    namespace Systems
+    {
+        class ISystem
+        {
+        public:
+            virtual ~ISystem() = default;
+            virtual void run() = 0;
+        };
+    }
+}

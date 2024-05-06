@@ -7,14 +7,14 @@
 
 # Variables
 
-SRC						=	Chunks/SimdChunk.cpp	\
+SRC						=	Chunks/SimdChunks.cpp	\
 							Systems/SimdSystem.cpp	\
 
 SRC_DIR					=	./src/
 
 NAME					=	libecs-pure-simd.a
 
-CXXFLAGS				=	-Wall -Wextra -I./include
+CXXFLAGS				=	-Wall -Wextra -I./include -I../base/include
 
 VALARGS					=	-g3
 
